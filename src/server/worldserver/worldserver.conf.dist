@@ -1318,7 +1318,7 @@ Updates.EnableDatabases = 15
 #        Default:     1 - (Enabled)
 #                     0 - (Disabled)
 
-Updates.AutoSetup   = 0
+Updates.AutoSetup   = 1
 
 #
 #    Updates.Redundancy
@@ -1327,7 +1327,7 @@ Updates.AutoSetup   = 0
 #        Default:     1 - (Enabled)
 #                     0 - (Disabled)
 
-Updates.Redundancy  = 0
+Updates.Redundancy  = 1
 
 #
 #    Updates.ArchivedRedundancy
@@ -1344,7 +1344,7 @@ Updates.ArchivedRedundancy = 0
 #        Default:     1 - (Enabled)
 #                     0 - (Disabled)
 
-Updates.AllowRehash = 0
+Updates.AllowRehash = 1
 
 #
 #    Updates.CleanDeadRefMaxCount
@@ -1356,7 +1356,7 @@ Updates.AllowRehash = 0
 #                     0 - (Disabled)
 #                    -1 - (Enabled - unlimited)
 
-Updates.CleanDeadRefMaxCount = 0
+Updates.CleanDeadRefMaxCount = 3
 
 #
 ###################################################################################################
@@ -4124,3 +4124,6 @@ Metric.OverallStatusInterval = 1
 # 随机本进本人数限制 0:仿官服限制 4:单人排本
 
 numPlayers = 4
+
+#unknown
+numLfgGroups = 0

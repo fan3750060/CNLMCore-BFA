@@ -2714,16 +2714,21 @@ static bool CheckUiMapAssignmentStatus(float x, float y, float z, int32 mapId, i
     if (areaId && uiMapAssignment->AreaID)
     {
         int8 areaPriority = 0;
-        while (areaId != uiMapAssignment->AreaID)
+        if (areaId)
         {
-            if (AreaTableEntry const* areaEntry = sAreaTableStore.LookupEntry(areaId))
+            while (areaId != uiMapAssignment->AreaID)
             {
-                areaId = areaEntry->ParentAreaID;
-                ++areaPriority;
+                if (AreaTableEntry const* areaEntry = sAreaTableStore.LookupEntry(areaId))
+                {
+                    areaId = areaEntry->ParentAreaID;
+                    ++areaPriority;
+                }
+                else
+                    return false;
             }
-            else
-                return false;
         }
+        else
+            return false;
 
         status->AreaPriority = areaPriority;
     }
